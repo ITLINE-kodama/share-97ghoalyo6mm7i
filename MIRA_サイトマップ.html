@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社NEXT リニューアル ｜ サイトマップ（サイト構成図）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D1B2A;--mid:#1B3A5B;--brass:#C9A24B;--line:#d7dde4;--bg:#eef1f4;--sub:#6b7682;--new:#c9484c;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--bg);color:#22303d;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.en{font-family:"Space Grotesk";letter-spacing:.14em}
+header{background:linear-gradient(150deg,#0a1521,#16314c);color:#fff;padding:40px 0 34px}
+header h1{font-size:23px;font-weight:700;letter-spacing:.02em}
+header .en{color:var(--brass);font-size:12px}
+header p{color:#aebac7;font-size:12.5px;margin-top:8px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px;color:#cdd8e3}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+.dot.n{background:var(--new)}.dot.e{background:#6f8aa6}.dot.s{background:var(--brass)}
+
+.note-common{background:#fffdf5;border:1px solid #e8dfb8;border-radius:10px;padding:18px 22px;margin:26px 0;font-size:13px;color:#5a5340}
+.note-common b{color:#8a6d1a}
+.note-common ul{margin:8px 0 0 18px}
+
+/* tree */
+.tree{padding:20px 0 10px}
+.root{display:flex;justify-content:center;margin-bottom:8px}
+.node{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;position:relative;transition:.25s}
+.node:hover{box-shadow:0 8px 24px rgba(13,27,42,.1);transform:translateY(-2px)}
+.node .pg{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+.node .slug{font-family:"Space Grotesk";font-size:11.5px;color:var(--brass);margin:3px 0 4px}
+.node .role{font-size:12px;color:var(--sub)}
+.badge-n{background:var(--new);color:#fff;font-size:10px;padding:1px 8px;border-radius:20px;font-weight:700}
+.badge-e{background:#eef2f6;color:#6f8aa6;font-size:10px;padding:1px 8px;border-radius:20px;font-weight:700;border:1px solid #dde4ea}
+
+.rootnode{background:linear-gradient(150deg,#16314c,#0D1B2A);color:#fff;border:none;max-width:520px;text-align:center}
+.rootnode .pg{justify-content:center;color:#fff}
+.rootnode .slug{color:var(--brass)}
+.rootnode .role{color:#bcc8d4}
+
+.connector{width:2px;height:26px;background:var(--line);margin:0 auto}
+.children{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;padding-top:8px}
+.children::before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:var(--line)}
+.col{position:relative}
+.col::before{content:"";position:absolute;top:-8px;left:50%;width:2px;height:8px;background:var(--line)}
+
+/* TOP sections */
+.sections{margin-top:14px;background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:18px 22px}
+.sections h3{font-size:13px;color:var(--mid);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sections h3 .en{color:var(--brass);font-size:11px}
+.secflow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sec{background:#f4f7fa;border:1px solid var(--line);border-radius:8px;padding:7px 13px;font-size:12px;display:flex;align-items:center;gap:7px}
+.sec.new{background:#fdf0f0;border-color:#f0c9cb}
+.arrow{color:#b5c0cb;font-size:13px}
+
+/* table */
+.tablewrap{margin:40px 0 60px}
+.tablewrap h2{font-size:16px;margin-bottom:4px}
+.tablewrap .en{color:var(--brass);font-size:11px}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(13,27,42,.05)}
+th{background:#16314c;color:#fff;text-align:left;padding:13px 16px;font-weight:500;font-size:12.5px}
+td{padding:12px 16px;border-bottom:1px solid #eef2f6;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.tag-new{color:var(--new);font-weight:700}.tag-exist{color:#6f8aa6;font-weight:700}
+.slugc{font-family:"Space Grotesk";color:#0D1B2A;background:#f4f7fa;padding:1px 7px;border-radius:5px;font-size:11.5px}
+footer{background:#0D1B2A;color:#9aa6b4;padding:24px 0;font-size:11px}
+@media(max-width:860px){.children{grid-template-columns:1fr 1fr}.children::before{display:none}.col::before{display:none}}
+@media(max-width:520px){.children{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="en">SITE MAP</div>
+    <h1>合同会社NEXT 公式サイトリニューアル ｜ サイト構成図</h1>
+    <p>現行 https://mira-consulting.jp/ をベースに再構成。小規模・1ページTOP＋最小下層。SEO/MEOは目的外。</p>
+    <div class="legend">
+      <span><i class="dot n"></i>★ 新規追加（ページ/セクション）</span>
+      <span><i class="dot e"></i>既存流用（リニューアル）</span>
+      <span><i class="dot s"></i>TOP内セクション</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="note-common">
+    <b>■ 全ページ共通要素</b>
+    <ul>
+      <li><b>ヘッダー（グローバルナビ）</b>：ロゴ ／ About ／ Service（事業内容） ／ 訪問看護 ／ Company（会社情報） ／ Contact</li>
+      <li><b>フッター</b>：ロゴ＋会社情報（住所・電話は控えめ） ／ サイトマップ ／ 各ページリンク ／ プライバシーポリシー ／ コピーライト</li>
+      <li><b>お問い合わせ導線</b>：共通お問い合わせフォーム<b>1つに集約</b>（各事業の個別フォームは設けない）。電話番号は会社情報欄のみ・前面に出さない。</li>
+      <li><b>サイト内検索</b>：<b>設置しない</b>（小規模・名刺代わりサイトのため不要）。ブログ・お知らせ機能も非搭載。</li>
+    </ul>
+  </div>
+
+  <!-- TREE -->
+  <div class="tree">
+    <div class="root">
+      <div class="node rootnode">
+        <div class="pg">TOP（トップページ）<span class="badge-e">既存</span></div>
+        <div class="slug">/</div>
+        <div class="role">1ページで会社全体像と5事業・信頼感を伝える名刺代わりのトップ</div>
+      </div>
+    </div>
+
+    <!-- TOP内セクション -->
+    <div class="sections">
+      <h3><span class="en">TOP SECTIONS</span> トップページ内のセクション構成（縦スクロール1ページ）</h3>
+      <div class="secflow">
+        <span class="sec"><i class="dot s"></i>メインビジュアル＋キャッチ</span><span class="arrow">›</span>
+        <span class="sec"><i class="dot s"></i>About／NEXTについて</span><span class="arrow">›</span>
+        <span class="sec"><i class="dot s"></i>Service／5事業一覧</span><span class="arrow">›</span>
+        <span class="sec new"><i class="dot n"></i>★ 訪問看護ステーション（精神科特化・くくる4拠点）</span><span class="arrow">›</span>
+        <span class="sec"><i class="dot s"></i>DX・医療総合戦略・財務・アート</span><span class="arrow">›</span>
+        <span class="sec"><i class="dot s"></i>会社情報</span><span class="arrow">›</span>
+        <span class="sec"><i class="dot s"></i>お問い合わせ（CTA）</span>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <!-- 下層 -->
+    <div class="children">
+      <div class="col"><div class="node">
+        <div class="pg">会社情報 <span class="badge-e">既存</span></div>
+        <div class="slug">/about（または /company）</div>
+        <div class="role">合同会社NEXTの会社概要＋訪問看護くくる4拠点の詳細（〒・住所・TEL・FAX・医療機関コード・地図リンク）。実体ある安心を示す。</div>
+      </div></div>
+      <div class="col"><div class="node">
+        <div class="pg">事業内容 <span class="badge-e">既存</span></div>
+        <div class="slug">/service</div>
+        <div class="role">5事業の詳細（訪問看護★／DX・研修／医療総合戦略／財務・経営支援／アートマネジメント）。各事業を課題→解決→領域で補足。</div>
+      </div></div>
+      <div class="col"><div class="node">
+        <div class="pg">お問い合わせ <span class="badge-e">既存</span></div>
+        <div class="slug">/contact</div>
+        <div class="role">共通フォーム1つ（会社名・氏名・メール・種別・内容）。電話は前面に出さず会社情報へ誘導。</div>
+      </div></div>
+      <div class="col"><div class="node">
+        <div class="pg">プライバシーポリシー <span class="badge-e">既存</span></div>
+        <div class="slug">/privacy</div>
+        <div class="role">個人情報の取扱い方針。信頼性確保のための単一テキストページ。</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="tablewrap">
+    <div class="en">PAGE LIST</div>
+    <h2>ページ一覧表</h2>
+    <table>
+      <tr><th style="width:170px">ページ名</th><th style="width:150px">階層 / スラッグ案</th><th style="width:90px">新規/既存</th><th>備考</th></tr>
+      <tr><td>TOP（トップページ）</td><td>第0階層　<span class="slugc">/</span></td><td class="tag-exist">既存（刷新）</td><td>1ページ完結型。訪問看護セクションを新規追加し主役化。SEO/MEO最小。</td></tr>
+      <tr><td>┗ 訪問看護セクション</td><td>TOP内 ＋ /service内</td><td class="tag-new">★ 新規</td><td>精神科特化・くくる4拠点（越谷/足立/流山/浦和）＋5拠点目（※開設時期は要確認）。</td></tr>
+      <tr><td>会社情報</td><td>第1階層　<span class="slugc">/about</span></td><td class="tag-exist">既存（拡充）</td><td>運営法人＝合同会社NEXT。住所・TEL/FAXは欄内に控えめ掲載。4拠点詳細を集約。</td></tr>
+      <tr><td>事業内容</td><td>第1階層　<span class="slugc">/service</span></td><td class="tag-exist">既存（再整理）</td><td>現行の引越総合プラットフォーム事業は非掲載化（要確認）、訪問看護を追加し5事業へ再編。</td></tr>
+      <tr><td>お問い合わせ</td><td>第1階層　<span class="slugc">/contact</span></td><td class="tag-exist">既存</td><td>共通フォーム1つに集約。代表メール併記は発行確定後（※要確認）。</td></tr>
+      <tr><td>プライバシーポリシー</td><td>第1階層　<span class="slugc">/privacy</span></td><td class="tag-exist">既存</td><td>フッターから常時アクセス。公開日に合わせ制定日を確定。</td></tr>
+    </table>
+    <p style="font-size:12px;color:var(--sub);margin-top:14px">※ 代表挨拶・代表写真・実績一覧・ブログ・お知らせページは要件により<b>作成しない</b>。下層は上記4ページに限定（大規模化しない）。</p>
+  </div>
+</div>
+
+<footer><div class="wrap">© 合同会社NEXT. サイト構成図（提案資料）｜制作：株式会社ITLINE</div></footer>
+</body>
+</html>

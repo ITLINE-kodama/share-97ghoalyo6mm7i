@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社NEXT ｜ 価値を育み、未来へつなぐ ｜ デザイン案B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+/* ===== sharedan.co.jp 準拠：ミント×ティール×グリッド／Inter極太英字＋Noto Sans JP ===== */
+:root{
+  --mint-bg:#EFF5F3; --white:#FFFFFF; --mint:#82D7CC; --mint-t:#E2F1ED;
+  --teal:#05AE99; --teal-d:#059E8B; --ink:#2E2E2E; --black:#0B0F0E; --dark:#272A2B;
+  --sub:#6B7672; --line:rgba(11,15,14,.10); --grid:rgba(11,15,14,.028);
+  --en:"Inter",sans-serif; --jp:"Noto Sans JP",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--jp);color:var(--ink);background:var(--mint-bg);line-height:1.9;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.en{font-family:var(--en)}
+.grid-bg{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:80px 80px}
+
+/* ---- header ---- */
+header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.4s;padding:20px 0;background:rgba(255,255,255,0)}
+header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding:13px 0;box-shadow:0 1px 0 var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:30px}
+nav.gnav{display:flex;align-items:center;gap:34px}
+nav.gnav a{font-family:var(--en);font-weight:600;font-size:13.5px;letter-spacing:.08em;color:var(--ink);position:relative;padding:4px 0}
+nav.gnav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--teal);transition:.3s}
+nav.gnav a:hover::after{width:100%}
+.navcta{font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.06em;background:var(--teal);color:#fff!important;padding:13px 28px;border-radius:100px;transition:.3s}
+.navcta:hover{background:var(--teal-d)}.navcta::after{display:none}
+.burger{width:46px;height:46px;border-radius:50%;background:var(--black);color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer}
+.menubtn{display:none}
+
+/* ---- hero ---- */
+.hero{position:relative;min-height:100vh;padding:150px 0 70px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hero .mark-wm{position:absolute;right:5%;bottom:3%;width:min(44vw,580px);opacity:.9;pointer-events:none;filter:brightness(0) invert(1);z-index:1}
+.hcards{overflow:hidden;width:100%;margin:0 0 31px;padding:0;position:relative;z-index:2}
+.htrack{display:flex;gap:66px;width:max-content;align-items:flex-start;will-change:transform;--setw:1980px;animation:hslide 32s linear infinite}
+.hcards:hover .htrack{animation-play-state:paused}
+.hcard{flex:0 0 auto;width:330px;height:385px;overflow:hidden;clip-path:url(#mvclip);background:#cfe3dc}
+.hcard img{width:100%;height:100%;object-fit:cover}
+@keyframes hslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-1 * var(--setw)),0,0)}}
+@media(prefers-reduced-motion:reduce){.htrack{animation:none}}
+.hero-copy{position:relative;z-index:3;text-align:left;padding:0 40px 0 clamp(24px,8vw,120px)}
+.hero h1{font-family:var(--en);font-weight:700;font-size:clamp(40px,6.7vw,100px);line-height:1.04;letter-spacing:-.02em;color:var(--black)}
+.hero h1 .dot{color:var(--teal)}
+.hero .sub{margin-top:12px;font-family:var(--jp);font-weight:700;font-size:clamp(16px,1.6vw,24px);color:var(--black);letter-spacing:.08em}
+.hero .sub em{color:var(--teal);font-style:normal}
+.pickup{position:absolute;left:0;right:0;bottom:0;z-index:4;background:#fff;border-top:1px solid var(--line);display:flex;align-items:stretch;overflow:hidden}
+.pickup .tag{flex:none;background:var(--black);color:#fff;font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.14em;display:flex;align-items:center;padding:0 30px}
+.pickup .item{display:flex;align-items:center;gap:26px;padding:20px 30px;font-size:13.5px;min-width:0}
+.pickup .d{font-family:var(--en);font-weight:600;color:var(--teal);letter-spacing:.04em}
+.pickup .t{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pickup .ar{margin-left:auto;color:var(--teal);padding:0 30px;display:flex;align-items:center}
+
+/* ---- section heading（英大文字＋和ラベル） ---- */
+.shead .big{font-family:var(--en);font-weight:800;font-size:clamp(48px,8vw,108px);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.shead .big .ini{color:var(--teal)}
+.shead .jp{margin-top:8px;font-size:14px;letter-spacing:.34em;color:var(--ink);font-weight:500}
+
+/* ---- reveal ---- */
+.rv{opacity:0;transform:translateY(42px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+
+/* ---- concept（ティール） ---- */
+.concept{position:relative;background:var(--teal);color:#fff;padding:130px 0 120px;overflow:hidden}
+.concept .word{position:absolute;left:0;right:0;top:7%;text-align:center;font-family:var(--en);font-weight:800;font-size:18vw;line-height:1;color:rgba(255,255,255,.08);pointer-events:none}
+.concept .lab{font-family:var(--jp);font-weight:700;font-size:13px;letter-spacing:.2em}
+.concept .big{margin-top:8px;font-family:var(--en);font-weight:800;font-size:clamp(30px,4vw,52px)}
+.concept h2{margin-top:40px;font-family:var(--jp);font-weight:900;font-size:clamp(24px,3.6vw,46px);line-height:1.5}
+.concept h2 u{text-decoration:none;border-bottom:3px solid rgba(255,255,255,.9);padding-bottom:2px}
+.concept h2 .f{color:rgba(255,255,255,.45)}
+.concept .lead{margin-top:30px;font-size:14.5px;color:rgba(255,255,255,.86);line-height:2.1}
+.cgrid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.citem{text-align:left}
+.cic{width:150px;height:150px;border:1.5px solid rgba(255,255,255,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.cic svg{width:64px;height:64px;fill:none;stroke:#fff;stroke-width:4}
+.citem p{font-size:14px;color:#fff;font-weight:500;line-height:1.85}
+.cstance{margin-top:54px;font-family:var(--jp);font-weight:900;font-size:clamp(18px,2.4vw,28px);line-height:1.6}
+.cstance .f{color:rgba(255,255,255,.5)}
+.btn-pill{display:inline-flex;align-items:center;gap:16px;background:#fff;color:var(--ink);font-family:var(--en);font-weight:700;font-size:13.5px;letter-spacing:.08em;padding:18px 36px;border-radius:100px;transition:.3s}
+.btn-pill:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.18)}
+.btn-pill .ar{color:var(--teal)}
+.concept .cta-row{margin-top:48px;display:flex;justify-content:flex-end}
+
+/* ---- service ---- */
+.service{position:relative;padding:130px 0}
+.sv-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:start}
+.sv-left{position:sticky;top:120px}
+.sv-left .en-small{margin-top:24px;font-family:var(--en);font-size:12.5px;letter-spacing:.06em;color:var(--sub)}
+.sv-left h3{margin-top:30px;font-family:var(--jp);font-weight:900;font-size:clamp(24px,2.7vw,34px);line-height:1.4;color:var(--ink)}
+.sv-left h3 .t{color:var(--teal)}
+.sv-left p{margin-top:20px;font-size:14px;color:var(--sub);line-height:2.05;max-width:420px}
+.sv-cards{display:flex;flex-direction:column;gap:30px}
+.svcard{background:#fff;border-radius:22px;padding:44px 46px;box-shadow:0 12px 40px rgba(11,40,34,.06)}
+.svcard .cat{font-family:var(--en);font-weight:800;font-size:clamp(24px,2.6vw,32px);color:var(--black)}
+.svcard .catjp{margin-top:4px;font-family:var(--jp);font-weight:700;font-size:13px;color:var(--teal);letter-spacing:.04em}
+.svcard hr{margin:22px 0 8px;border:none;border-top:1px solid var(--teal);opacity:.5}
+.svrow{display:flex;gap:26px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.svrow:last-child{border-bottom:none}
+.svrow .ic{flex:none;width:96px;height:96px;border-radius:50%;background:var(--mint-t);display:flex;align-items:center;justify-content:center}
+.svrow .ic svg{width:46px;height:46px;fill:none;stroke:var(--teal);stroke-width:4}
+.svrow h4{font-family:var(--jp);font-weight:700;font-size:17px;color:var(--teal)}
+.svrow ul{margin-top:8px;list-style:none}
+.svrow li{position:relative;padding-left:18px;font-size:13px;color:var(--ink);line-height:1.9}
+.svrow li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* ---- works（ダーク） ---- */
+.works{background:var(--dark);color:#fff;padding:120px 0;position:relative;overflow:hidden}
+.works .word{position:absolute;right:-2%;top:8%;font-family:var(--en);font-weight:900;font-size:16vw;color:rgba(255,255,255,.04);pointer-events:none;letter-spacing:-.02em}
+.works .top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:60px}
+.works .big{font-family:var(--en);font-weight:800;font-size:clamp(48px,8vw,104px);line-height:1;color:#fff}
+.works .jp{margin-top:8px;font-size:14px;letter-spacing:.3em;color:rgba(255,255,255,.7)}
+.works .desc{max-width:420px;font-size:13.5px;color:rgba(255,255,255,.7);line-height:2}
+.wcards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.wcard{background:#32393a;border-radius:16px;overflow:hidden;transition:.4s}
+.wcard:hover{transform:translateY(-8px)}
+.wcard .pic{aspect-ratio:4/3;background-size:cover;background-position:center}
+.wcard .cap{padding:20px 22px}
+.wcard .no{font-family:var(--en);font-weight:800;font-size:13px;color:var(--mint)}
+.wcard h4{margin-top:6px;font-family:var(--jp);font-weight:700;font-size:16px;color:#fff}
+.wcard p{margin-top:6px;font-size:12px;color:rgba(255,255,255,.6)}
+
+/* ---- news ---- */
+.news{position:relative;padding:128px 0}
+.news .top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+.news .intro{max-width:560px;font-size:14px;color:var(--ink);line-height:2}
+.news .big{font-family:var(--en);font-weight:800;font-size:clamp(60px,9vw,128px);line-height:.9;color:var(--ink);text-align:right}
+.nlist{margin-top:40px;display:flex;flex-direction:column;gap:18px}
+.nrow{display:flex;align-items:center;gap:26px;background:#fff;border-radius:14px;padding:24px 30px;transition:.3s}
+.nrow:hover{transform:translateX(6px);box-shadow:0 12px 30px rgba(11,40,34,.08)}
+.nrow .d{font-family:var(--en);font-weight:600;color:var(--teal);letter-spacing:.04em;flex:none;border-right:1px solid var(--line);padding-right:24px}
+.nrow .pill{flex:none;background:var(--teal);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:100px}
+.nrow .t{font-size:14px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nrow .ar{margin-left:auto;color:var(--teal);flex:none}
+.news .cta-row{margin-top:40px;display:flex;justify-content:flex-end}
+
+/* ---- recruit ---- */
+.recruit{position:relative;padding:120px 0}
+.rc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.rc-pic{border-radius:22px;overflow:hidden;aspect-ratio:5/4;background-size:cover;background-position:center;box-shadow:0 22px 50px rgba(11,40,34,.12)}
+.rc-txt .script{font-family:"Dancing Script",cursive;font-size:46px;color:var(--teal);line-height:1}
+.rc-txt .big{font-family:var(--en);font-weight:800;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--ink);margin-top:6px}
+.rc-txt .jp{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--sub)}
+.rc-txt p{margin-top:24px;font-size:14px;color:var(--ink);line-height:2}
+.rc-txt .cta-row{margin-top:34px}
+
+/* ---- contact ---- */
+.contact{position:relative;padding:120px 0 0}
+.contact .head{text-align:center;padding-bottom:70px}
+.contact .big{font-family:var(--en);font-weight:800;font-size:clamp(56px,9vw,120px);line-height:1;color:var(--ink)}
+.contact .big .ini{color:var(--teal)}
+.contact .jp{margin-top:8px;font-size:15px;letter-spacing:.34em;color:var(--ink)}
+.cbox{position:relative;background:var(--dark);color:#fff;padding:80px 40px 90px;text-align:center;overflow:hidden}
+.cbox h3{font-family:var(--jp);font-weight:900;font-size:clamp(22px,3vw,34px);line-height:1.5}
+.cbox p{margin-top:18px;font-size:14px;color:rgba(255,255,255,.8);line-height:2}
+.cbox .plane{width:60px;height:60px;margin:0 auto 22px;fill:none;stroke:var(--mint);stroke-width:4}
+.cbox .btn-pill{margin-top:34px;background:var(--teal);color:#fff}
+.cbox .btn-pill .ar{color:#fff}
+
+/* ---- footer ---- */
+footer{background:var(--black);color:#fff;padding:74px 0 40px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;margin-bottom:50px}
+.fgrid .logo img{height:30px;filter:brightness(0) invert(1)}
+.fgrid .fd{margin-top:18px;font-size:12px;color:rgba(255,255,255,.62);line-height:2}
+.fcol h5{font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--mint);margin-bottom:16px}
+.fcol a{display:block;font-size:12.5px;color:rgba(255,255,255,.82);padding:7px 0;transition:.25s}
+.fcol a:hover{color:var(--mint);padding-left:4px}
+.copy{border-top:1px solid rgba(255,255,255,.14);padding-top:26px;font-family:var(--en);font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:980px){
+  nav.gnav,.navcta{display:none}.menubtn{display:flex}
+  .htrack{gap:34px;--setw:1320px}.hcard{width:230px;height:268px}
+  .sv-grid{grid-template-columns:1fr;gap:36px}.sv-left{position:static}
+  .cgrid{grid-template-columns:1fr;gap:30px}.cic{width:120px;height:120px}
+  .wcards{grid-template-columns:1fr 1fr}
+  .rc-grid{grid-template-columns:1fr;gap:30px}
+  .news .top{flex-direction:column}.news .big{text-align:left}
+  .wrap{padding:0 24px}
+}
+@media(max-width:560px){.wcards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<clipPath id="mvclip" clipPathUnits="objectBoundingBox"><path d="M 1 0.036098 C 1 0.016160 0.981136 0 0.957858 0 H 0.042140 C 0.018865 0 0 0.016160 0 0.036098 V 0.806064 C 0 0.820786 0.010436 0.834033 0.026377 0.839545 L 0.483178 0.997381 C 0.493270 1.000869 0.504544 1.000874 0.514644 0.997402 L 0.973564 0.839524 C 0.989533 0.834031 1 0.820769 1 0.806026 V 0.036098 Z"/></clipPath>
+</defs></svg>
+<header id="hdr">
+  <div class="wrap hdr">
+    <a href="#top" class="logo"><img src="images/logo.png" alt="NEXT"></a>
+    <nav class="gnav">
+      <a href="#concept">ABOUT</a>
+      <a href="#service">SERVICE</a>
+      <a href="#works">WORKS</a>
+      <a href="#news">NEWS</a>
+    </nav>
+    <a href="#contact" class="navcta">CONTACT</a>
+    <button class="burger menubtn" id="mbtn" aria-label="メニュー">≡</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero grid-bg" id="top">
+  <img class="mark-wm" src="images/logo_mark.png" alt="">
+  <div class="hcards">
+    <div class="htrack">
+      <div class="hcard"><img src="images/img_service-pic-03.png" alt=""></div>
+      <div class="hcard"><img src="images/img_service-pic-01.png" alt=""></div>
+      <div class="hcard"><img src="images/img_aboutus-pic-01.png" alt=""></div>
+      <div class="hcard"><img src="images/img_service-pic-04.png" alt=""></div>
+      <div class="hcard"><img src="images/img_service-pic-02.png" alt=""></div>
+      <div class="hcard" aria-hidden="true"><img src="images/img_service-pic-03.png" alt=""></div>
+      <div class="hcard" aria-hidden="true"><img src="images/img_service-pic-01.png" alt=""></div>
+      <div class="hcard" aria-hidden="true"><img src="images/img_aboutus-pic-01.png" alt=""></div>
+      <div class="hcard" aria-hidden="true"><img src="images/img_service-pic-04.png" alt=""></div>
+      <div class="hcard" aria-hidden="true"><img src="images/img_service-pic-02.png" alt=""></div>
+    </div>
+  </div>
+  <div class="hero-copy">
+    <h1 class="en">We Care<span class="dot">.</span> We Grow<span class="dot">.</span></h1>
+    <p class="sub">看護だけじゃない。<em>仕組み</em>も、<em>人</em>も、<em>地域</em>も育てる会社です。</p>
+  </div>
+</section>
+
+<!-- CONCEPT / ABOUT -->
+<section class="concept" id="concept">
+  <div class="word en">CONCEPT</div>
+  <div class="wrap">
+    <div class="lab rv">私たちの考え</div>
+    <div class="big en rv">Our Concept</div>
+    <h2 class="rv"><u>医療・福祉の現場</u>を知るからこそ、<br><u>経営とテクノロジー</u>で<span class="f">その先まで支える。</span></h2>
+    <p class="lead rv">「制度や仕組みはあるのに、現場で活かしきれない」——そんな声に、私たちは何度も向き合ってきました。看護・経営・DX・財務・アートを横断し、関わる人と地域の「これから」を、戦略と実装の両面から支えます。</p>
+    <div class="cgrid">
+      <div class="citem rv">
+        <div class="cic"><svg viewBox="0 0 64 64"><path d="M32 56C16 44 8 34 8 22 A12 12 0 0 1 32 18 A12 12 0 0 1 56 22 C56 34 48 44 32 56Z"/></svg></div>
+        <p>精神科に特化した訪問看護を中核に、在宅支援・医療連携で暮らしに寄り添う。</p>
+      </div>
+      <div class="citem rv d1">
+        <div class="cic"><svg viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="30" rx="3"/><path d="M22 52h20M32 44v8M20 30l6-6 6 6 8-10"/></svg></div>
+        <p>DX・医療経営・財務まで横断し、現場に定着する「運用の仕組み」までつくる。</p>
+      </div>
+      <div class="citem rv d2">
+        <div class="cic"><svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="9"/><path d="M14 52c0-10 8-16 18-16s18 6 18 16"/><path d="M48 14l4 4-4 4"/></svg></div>
+        <p>検索からの集客ではなく、ご紹介・ご連携を通じて確かな信頼を育てる。</p>
+      </div>
+    </div>
+    <div class="cstance rv">支えて終わりではなく、成果が出る「これから」まで。<br><span class="f">それが、私たちのスタンスです。</span></div>
+    <div class="cta-row"><a href="./MIRA_会社情報_B.html" class="btn-pill">ABOUT <span class="ar en">→</span></a></div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="service grid-bg" id="service">
+  <div class="wrap sv-grid">
+    <div class="sv-left">
+      <div class="shead">
+        <div class="big en"><span class="ini">S</span>ervice</div>
+        <div class="jp">事業案内</div>
+      </div>
+      <div class="en-small">(Services That Grow)</div>
+      <h3><span class="t">育む</span>だけじゃない、<br>NEXTの多様な事業。</h3>
+      <p>精神科訪問看護を中核に、DX・医療経営・財務・アートまで。「現場 × 仕組み」で、地域の課題解決を支援しています。</p>
+    </div>
+    <div class="sv-cards">
+      <div class="svcard rv">
+        <div class="cat en">Visiting Nursing</div>
+        <div class="catjp">訪問看護事業</div><hr>
+        <div class="svrow"><div class="ic"><svg viewBox="0 0 48 48"><path d="M24 42C12 33 6 26 6 17 A9 9 0 0 1 24 14 A9 9 0 0 1 42 17 C42 26 36 33 24 42Z"/></svg></div>
+          <div><h4>精神科特化の訪問看護「くくる」</h4><ul><li>心の回復に寄り添う在宅支援</li><li>医療・福祉・地域との継続的な連携</li><li>関東4拠点（越谷・足立・流山・浦和）／5拠点目 開設予定</li></ul></div></div>
+      </div>
+      <div class="svcard rv">
+        <div class="cat en">DX &amp; Management</div>
+        <div class="catjp">DX・医療経営・財務</div><hr>
+        <div class="svrow"><div class="ic"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="22" rx="2"/><path d="M18 38h12M24 32v6M16 22l5-5 4 4 6-7"/></svg></div>
+          <div><h4>DXシステム開発／研修</h4><ul><li>業務効率化・AI活用・システム開発</li><li>現場に定着するまで伴走</li></ul></div></div>
+        <div class="svrow"><div class="ic"><svg viewBox="0 0 48 48"><path d="M8 40V20M20 40V12M32 40V26M44 40H6"/></svg></div>
+          <div><h4>医療総合戦略／財務・経営支援</h4><ul><li>開業支援・集患マーケ・ブランディング</li><li>紹介制で事業戦略の設計まで踏み込む</li></ul></div></div>
+      </div>
+      <div class="svcard rv">
+        <div class="cat en">Art Management</div>
+        <div class="catjp">アートマネジメント</div><hr>
+        <div class="svrow"><div class="ic"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><circle cx="18" cy="20" r="2.4"/><circle cx="30" cy="20" r="2.4"/><circle cx="30" cy="30" r="2.4"/></svg></div>
+          <div><h4>アーティスト支援・作品価値の最大化</h4><ul><li>企画・販売・レンタル</li><li>企業とのコラボレーション</li></ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="works" id="works">
+  <div class="word en">WE ARE</div>
+  <div class="wrap">
+    <div class="top">
+      <div><div class="big en">Works</div><div class="jp">拠点・現場</div></div>
+      <p class="desc">精神科訪問看護ステーション「くくる」を関東4拠点で展開。地域に根ざし、暮らしのそばで支える現場を広げています。</p>
+    </div>
+    <div class="wcards">
+      <div class="wcard rv"><div class="pic" style="background-image:url('images/img_service-pic-01.png')"></div><div class="cap"><div class="no en">01</div><h4>くくる越谷</h4><p>埼玉県越谷市</p></div></div>
+      <div class="wcard rv d1"><div class="pic" style="background-image:url('images/img_service-pic-02.png')"></div><div class="cap"><div class="no en">02</div><h4>くくる足立</h4><p>東京都足立区</p></div></div>
+      <div class="wcard rv d2"><div class="pic" style="background-image:url('images/img_service-pic-03.png')"></div><div class="cap"><div class="no en">03</div><h4>くくる流山</h4><p>千葉県流山市</p></div></div>
+      <div class="wcard rv d3"><div class="pic" style="background-image:url('images/img_service-pic-04.png')"></div><div class="cap"><div class="no en">04</div><h4>くくる浦和</h4><p>埼玉県さいたま市</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news grid-bg" id="news">
+  <div class="wrap">
+    <div class="top">
+      <div class="intro rv">NEXTからのお知らせ・最新情報をお届けします。<br>事業や拠点に関する更新は、こちらからご確認いただけます。</div>
+      <div class="big en rv">News</div>
+    </div>
+    <div class="nlist">
+      <a href="#" class="nrow rv"><span class="d en">2026.07.01</span><span class="pill">お知らせ</span><span class="t">訪問看護ステーション「くくる」5拠点目 開設準備を開始しました</span><span class="ar">→</span></a>
+      <a href="#" class="nrow rv d1"><span class="d en">2026.06.10</span><span class="pill">事業</span><span class="t">医療機関向けDX・経営支援のご相談受付を強化しました</span><span class="ar">→</span></a>
+      <a href="#" class="nrow rv d2"><span class="d en">2026.05.20</span><span class="pill">採用</span><span class="t">訪問看護スタッフ（看護師・PSW）の採用を開始しました</span><span class="ar">→</span></a>
+    </div>
+    <div class="cta-row"><a href="#" class="btn-pill" style="background:#fff;color:var(--ink)">NEWS <span class="ar en">→</span></a></div>
+  </div>
+</section>
+
+<!-- RECRUIT -->
+<section class="recruit grid-bg">
+  <div class="wrap rc-grid">
+    <div class="rc-pic rv" style="background-image:url('images/img_aboutus-pic-01.png')"></div>
+    <div class="rc-txt rv d1">
+      <div class="script">Growing together</div>
+      <div class="big en">Recruit</div>
+      <div class="jp">採用情報</div>
+      <p>地域の医療・福祉のこれからを、ともに育てる仲間を募集しています。看護・経営・テクノロジー——あなたの専門性が、誰かの「これから」につながります。</p>
+      <div class="cta-row"><a href="./MIRA_お問い合わせ_B.html" class="btn-pill" style="background:var(--teal);color:#fff"><span>RECRUIT</span> <span class="ar en" style="color:#fff">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="head grid-bg">
+    <div class="big en"><span class="ini">C</span>ontact</div>
+    <div class="jp">お問い合わせ</div>
+  </div>
+  <div class="cbox">
+    <svg class="plane" viewBox="0 0 64 64"><path d="M58 6 L6 28 L26 36 L34 56 L58 6Z"/><path d="M26 36 L58 6"/></svg>
+    <h3>制作・事業のご相談、ご連携について</h3>
+    <p>各事業に関するご相談・ご連携は、共通お問い合わせフォームよりお受けしています。<br>内容を確認のうえ、担当よりご連絡いたします。</p>
+    <a href="./MIRA_お問い合わせ_B.html" class="btn-pill">お問い合わせフォームへ <span class="ar en">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><div class="logo"><img src="images/logo.png" alt="NEXT"></div><p class="fd">価値を育み、未来へつなぐ。<br>運営：合同会社NEXT<br>〒112-0014 東京都文京区関口3-6-17<br>TEL 080-3216-3067／FAX 050-3397-7373</p></div>
+      <div class="fcol"><h5>Business</h5><a href="#service">事業案内</a><a href="#works">拠点・現場</a><a href="#concept">私たちの考え</a></div>
+      <div class="fcol"><h5>Company</h5><a href="./MIRA_会社情報_B.html">会社情報</a><a href="./MIRA_お問い合わせ_B.html">お問い合わせ</a><a href="./MIRA_プライバシーポリシー_B.html">プライバシーポリシー</a></div>
+    </div>
+    <div class="copy"><span>© 合同会社NEXT. All Rights Reserved.</span><span>WE CARE. WE GROW.</span></div>
+  </div>
+</footer>
+<script>
+var hdr=document.getElementById('hdr');addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+var rvs=document.querySelectorAll('.rv');
+function showAll(){rvs.forEach(function(e){e.classList.add('in')});}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});rvs.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight){e.classList.add('in');}else{io.observe(e);}});}else{showAll();}
+addEventListener('load',function(){setTimeout(function(){document.querySelectorAll('.hero .rv').forEach(function(e){e.classList.add('in')});},200);});
+</script>
+</body>
+</html>

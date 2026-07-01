@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ ｜ 株式会社MIRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D1B2A;--ink2:#0a1521;--mid:#1B3A5B;--mid2:#274d75;--brass:#C9A24B;--brass-l:#e0c179;--platinum:#C8D2DC;--off:#F5F7FA;--line:rgba(200,210,220,.16);--muted:#8d9aa8;--serif:"Space Grotesk";--sans:"IBM Plex Sans JP"}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--platinum);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}a{color:inherit;text-decoration:none}
+.en{font-family:var(--serif);letter-spacing:.16em}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,21,33,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.22em;color:#fff}
+.logo small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.3em;color:var(--brass);font-weight:500}
+nav.gnav{display:flex;gap:28px;font-size:13px}nav.gnav a{color:var(--platinum);transition:.3s}nav.gnav a:hover{color:var(--brass)}
+.menubtn{display:none;font-size:24px;color:#fff;background:none;border:none;cursor:pointer}
+.phero{padding:160px 0 70px;position:relative;overflow:hidden;background:linear-gradient(150deg,#0a1521,#16314c)}
+.phero .grid{position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(200,210,220,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,210,220,.05) 1px,transparent 1px);background-size:60px 60px;transform:skewY(-6deg)}
+.phero .beam{position:absolute;width:160%;height:2px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.45;top:60%;left:-30%;transform:rotate(-6deg)}
+.phero-in{position:relative;z-index:2}
+.phero .en{color:var(--brass);font-size:13px;letter-spacing:.24em}
+.phero h1{color:#fff;font-size:clamp(28px,4vw,46px);font-weight:700;margin-top:14px}
+.crumb{font-size:12px;color:var(--muted);margin-top:18px}.crumb a:hover{color:var(--brass)}
+.sec{padding:90px 0}
+.cgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.intro .eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--brass);margin-bottom:18px}
+.intro h2{color:#fff;font-size:26px;font-weight:700}
+.intro p{color:var(--muted);margin-top:18px;font-size:14px}
+.infobox{margin-top:30px;border:1px solid var(--line);border-radius:14px;padding:26px;background:linear-gradient(160deg,rgba(27,58,91,.3),transparent)}
+.infobox dl div{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+.infobox dl div:last-child{border:none}
+.infobox dt{color:var(--brass);width:64px;flex:none;font-size:12px}
+.infobox dd{color:var(--platinum)}
+.note{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.8}
+/* form */
+.form{background:linear-gradient(160deg,rgba(27,58,91,.28),rgba(13,27,42,.2));border:1px solid var(--line);border-radius:20px;padding:46px}
+.field{margin-bottom:24px}
+.field label{display:block;font-size:13px;color:#fff;margin-bottom:10px;font-weight:500}
+.field label .req{color:var(--brass);font-size:11px;margin-left:8px;border:1px solid var(--brass);border-radius:3px;padding:0 6px}
+.field input,.field select,.field textarea{width:100%;background:rgba(10,21,33,.6);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:#fff;font-family:var(--sans);font-size:14px;transition:.3s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(201,162,75,.12)}
+.field textarea{min-height:140px;resize:vertical}
+.field .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.check a{color:var(--brass);text-decoration:underline}
+.submit{width:100%;margin-top:14px;background:var(--brass);color:#0D1B2A;font-weight:700;padding:17px;border:none;border-radius:40px;font-size:15px;font-family:var(--sans);cursor:pointer;transition:.4s}
+.submit:hover{background:var(--brass-l);transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,162,75,.3)}
+.ok{display:none;background:rgba(62,142,126,.16);border:1px solid #3E8E7E;color:#bfe7dd;border-radius:12px;padding:18px;margin-bottom:24px;font-size:14px}
+footer{background:#080f18;padding:60px 0 34px;border-top:1px solid var(--line)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.fgrid .logo{font-size:20px}.fgrid p{font-size:12px;color:var(--muted);margin-top:14px}
+.fcol h5{font-size:11px;letter-spacing:.18em;color:var(--brass);margin-bottom:14px}
+.fcol a{display:block;font-size:13px;padding:6px 0;color:var(--platinum);transition:.3s}.fcol a:hover{color:var(--brass)}
+.copy{border-top:1px solid var(--line);padding-top:24px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){nav.gnav{display:none}.menubtn{display:block}.cgrid,.fgrid{grid-template-columns:1fr}.form{padding:30px}.field .two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a href="./MIRA_デザイン案A.html" class="logo">MIRA<small>MEDICAL × MANAGEMENT</small></a>
+    <nav class="gnav">
+      <a href="./MIRA_デザイン案A.html">Home</a><a href="./MIRA_事業内容.html">事業内容</a>
+      <a href="./MIRA_会社情報.html">会社情報</a><a href="./MIRA_お問い合わせ.html" style="color:var(--brass)">お問い合わせ</a>
+    </nav>
+    <button class="menubtn" id="mbtn">☰</button>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="grid"></div><div class="beam"></div>
+  <div class="wrap phero-in">
+    <div class="en">CONTACT</div>
+    <h1>お問い合わせ</h1>
+    <div class="crumb"><a href="./MIRA_デザイン案A.html">Home</a> ／ お問い合わせ</div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap cgrid">
+    <div class="intro">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h2>共通お問い合わせ窓口</h2>
+      <p>各事業に関するご相談・ご連携は、こちらの共通フォームよりお受けしています。内容を確認のうえ、担当よりご連絡いたします。</p>
+      <div class="infobox">
+        <dl>
+          <div><dt>運営</dt><dd>合同会社NEXT（株式会社MIRA）</dd></div>
+          <div><dt>所在地</dt><dd>〒112-0014 東京都文京区関口3-6-17</dd></div>
+          <div><dt>連絡</dt><dd>本フォーム ／ 代表メール（後日掲載）</dd></div>
+        </dl>
+      </div>
+      <p class="note">※お電話番号は<a href="./MIRA_会社情報.html" style="color:var(--brass)">会社情報ページ</a>に記載しております。ご連絡は本フォームへのご記入をおすすめしています。<br>※訪問看護に関するご相談も本フォームで承ります。</p>
+    </div>
+
+    <form class="form" id="cform" novalidate>
+      <div class="ok" id="ok">送信ありがとうございます。内容を確認のうえ、担当よりご連絡いたします。（※これはデザイン確認用のデモ動作です）</div>
+      <div class="field"><label>お名前 <span class="req">必須</span></label><input type="text" name="name" placeholder="例）中村 太郎" required></div>
+      <div class="field"><label>会社名・団体名</label><input type="text" name="company" placeholder="例）〇〇クリニック"></div>
+      <div class="field"><div class="two">
+        <div><label>メールアドレス <span class="req">必須</span></label><input type="email" name="email" placeholder="example@mail.com" required></div>
+        <div><label>お電話番号（任意）</label><input type="tel" name="tel" placeholder="000-0000-0000"></div>
+      </div></div>
+      <div class="field"><label>お問い合わせ種別</label>
+        <select name="type">
+          <option>訪問看護に関するご相談</option>
+          <option>DX・システム開発／研修について</option>
+          <option>医療総合戦略について</option>
+          <option>財務・経営支援について</option>
+          <option>アートマネジメントについて</option>
+          <option>事業連携・その他</option>
+        </select></div>
+      <div class="field"><label>お問い合わせ内容 <span class="req">必須</span></label><textarea name="message" placeholder="お問い合わせ内容をご記入ください。" required></textarea></div>
+      <div class="field check"><input type="checkbox" id="agree" style="width:auto;margin-top:5px" required><label for="agree" style="color:var(--muted);font-weight:400"><a href="./MIRA_プライバシーポリシー.html">プライバシーポリシー</a>に同意のうえ送信します。</label></div>
+      <button type="submit" class="submit">この内容で送信する →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><div class="logo">MIRA<small style="color:var(--brass);letter-spacing:.3em;font-size:9px">MEDICAL × MANAGEMENT</small></div><p>運営：合同会社NEXT</p></div>
+      <div class="fcol"><h5>PAGES</h5><a href="./MIRA_デザイン案A.html">Home</a><a href="./MIRA_事業内容.html">事業内容</a><a href="./MIRA_会社情報.html">会社情報</a></div>
+      <div class="fcol"><h5>CONTACT</h5><a href="./MIRA_お問い合わせ.html">お問い合わせ</a><a href="./MIRA_プライバシーポリシー.html">プライバシーポリシー</a></div>
+    </div>
+    <div class="copy"><span>© MIRA / 合同会社NEXT. All Rights Reserved.</span><span class="en">Medical × Management</span></div>
+  </div>
+</footer>
+<script>
+document.getElementById('mbtn').addEventListener('click',function(){
+  var g=document.querySelector('.gnav');
+  g.style.cssText='display:flex;flex-direction:column;position:absolute;top:74px;right:24px;background:#0a1521;border:1px solid rgba(200,210,220,.16);padding:18px 26px;border-radius:12px;gap:14px';
+});
+document.getElementById('cform').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.checkValidity()){this.reportValidity();return;}
+  document.getElementById('ok').style.display='block';
+  this.reset();window.scrollTo({top:document.querySelector('.sec').offsetTop-80,behavior:'smooth'});
+});
+</script>
+</body>
+</html>

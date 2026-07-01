@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社NEXT リニューアル ワイヤーフレーム（A案/B案/C案＋下層）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2733; --sub:#6b7682; --line:#d7dde4; --bg:#eef1f4; --card:#fff;
+  --wire:#dde3ea; --wire-line:#c2cbd4; --label:#8a96a3; --accent:#3a6ea5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ===== 全体ヘッダ ===== */
+.dochead{background:#fff;border-bottom:1px solid var(--line);padding:28px 0}
+.dochead h1{font-size:24px;font-weight:700;letter-spacing:.02em}
+.dochead p{color:var(--sub);font-size:13px;margin-top:6px}
+.tag{display:inline-block;font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:1px 8px;margin-right:6px;letter-spacing:.08em}
+
+/* ===== 要件メモ ===== */
+.memo{background:#fffdf5;border:1px solid #e8dfb8;border-radius:8px;padding:20px 24px;margin:24px 0}
+.memo h2{font-size:15px;color:#8a6d1a;margin-bottom:10px}
+.memo dl{display:grid;grid-template-columns:140px 1fr;gap:6px 16px;font-size:13px}
+.memo dt{color:#8a6d1a;font-weight:700}
+.memo dd{color:#5a5340}
+
+/* ===== タブ ===== */
+.tabs{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:4px;padding:10px 0;flex-wrap:wrap}
+.tabs .wrap{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font-size:13px;font-weight:500;border:1px solid var(--line);background:#fff;color:var(--sub);border-radius:6px;padding:8px 16px;cursor:pointer}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel{display:none;padding:32px 0 80px}
+.panel.active{display:block}
+
+/* ===== 案ヘッダ ===== */
+.casehd{border-left:5px solid var(--accent);padding:4px 0 4px 16px;margin-bottom:8px}
+.casehd h2{font-size:20px}
+.casehd .meta{font-size:12px;color:var(--sub);margin-top:4px}
+.casehd .meta b{color:var(--ink)}
+
+/* ===== デバイス枠 ===== */
+.devices{display:flex;gap:32px;align-items:flex-start;margin-top:24px}
+.pc{flex:1;min-width:0}
+.sp{width:300px;flex:none}
+.devlabel{font-size:11px;letter-spacing:.12em;color:var(--label);font-weight:700;margin-bottom:8px}
+.frame{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.spframe{border-radius:24px;border:6px solid #cfd6dd}
+
+/* ===== ワイヤー部品 ===== */
+.sec{border-bottom:1px dashed var(--line);padding:22px 22px}
+.sp .sec{padding:16px 14px}
+.elabel{font-size:10px;letter-spacing:.18em;color:var(--accent);font-weight:700;text-transform:uppercase}
+.h2{font-size:18px;font-weight:700;margin:4px 0 2px}
+.sp .h2{font-size:15px}
+.lead{font-size:12.5px;color:var(--sub)}
+.wire-box{background:var(--wire);border:1px dashed var(--wire-line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--label);font-size:11px;text-align:center;padding:10px}
+.row{display:flex;gap:12px;margin-top:12px}
+.col{flex:1}
+.note{background:#f3f7fb;border-left:3px solid var(--accent);font-size:11.5px;color:#4a5663;padding:8px 12px;margin-top:12px;border-radius:0 4px 4px 0}
+.note b{color:var(--accent)}
+.barnav{background:#f6f8fa;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:1px solid var(--line);font-size:12px}
+.barnav .logo{font-weight:700}
+.barnav .nav{display:flex;gap:14px;color:var(--sub)}
+.pill{display:inline-block;background:#e3e9f0;border-radius:20px;padding:3px 12px;font-size:11px;color:var(--sub);margin:2px}
+.cardrow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.miniwire{flex:1;min-width:120px;height:84px}
+.kpi{flex:1;text-align:center;padding:14px;background:#f6f8fa;border-radius:8px}
+.kpi .num{font-size:26px;font-weight:700;color:var(--accent)}
+.kpi .cap{font-size:10px;color:var(--sub)}
+.foot{background:#222a35;color:#aeb8c4;padding:22px;font-size:11px}
+.idxnum{font-size:30px;font-weight:700;color:var(--wire-line);line-height:1}
+@media(max-width:900px){.devices{flex-direction:column}.sp{width:300px}}
+</style>
+</head>
+<body>
+
+<header class="dochead">
+  <div class="wrap">
+    <h1>合同会社NEXT 公式サイトリニューアル ｜ ワイヤーフレーム</h1>
+    <p><span class="tag">WIREFRAME</span> 企画「_企画_デザイン方針.md」準拠｜A案=スライド/かっこいい系・B案=スライド/モダン・C案=動画型の3案＋下層ページ｜次工程：デザイン課の土台</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="memo">
+    <h2>■ 要件メモ（制作前に必ず確認）</h2>
+    <dl>
+      <dt>現行サイト</dt><dd>https://mira-consulting.jp/（「かっこいい系」。雰囲気・構成は活かしつつ事業整理して刷新）</dd>
+      <dt>会社/運営法人</dt><dd>サイト名義＝合同会社NEXT／会社情報掲載＝合同会社NEXT（〒112-0014 東京都文京区関口3-6-17 / 連絡＝共通フォーム・代表メール／電話番号は非掲載）</dd>
+      <dt>目的</dt><dd>紹介・関係者・商談先・医療福祉関係者向けの会社案内（名刺代わり）。<b>SEO/MEO・ブログ・お知らせ・代表挨拶/写真は不要</b></dd>
+      <dt>トンマナ</dt><dd>清潔感・信頼感・先進性・かっこいい・上品・BtoB。白/ネイビー/淡ブルー/グレー基調。病院サイトほど柔らかくしない</dd>
+      <dt>中核事業</dt><dd>訪問看護ステーション「くくる」＝精神科特化・4拠点（越谷/足立/流山/浦和）・5拠点目開設予定。カード型掲載</dd>
+      <dt>問い合わせ</dt><dd>共通フォーム1つに集約／電話は前面に出さない（会社情報欄のみ）</dd>
+      <dt>要確認</dt><dd>越谷の住所表記（越谷市越ヶ谷の誤字確認）／代表メール有無／Service2・3の確定文言</dd>
+    </dl>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="wrap">
+    <button class="tab active" data-t="a">A案：スライド型／かっこいい系</button>
+    <button class="tab" data-t="b">B案：スライド型／モダン</button>
+    <button class="tab" data-t="c">C案：動画型</button>
+    <button class="tab" data-t="sub">下層ページ（共通）</button>
+  </div>
+</nav>
+
+<!-- ============== A案 ============== -->
+<section class="panel active" id="a">
+ <div class="wrap">
+  <div class="casehd">
+    <h2>A案：スライド型／かっこいい系（ダーク・プレミアム）</h2>
+    <div class="meta">ヒーロー型＝<b>B（全面ビジュアル＋オーバーレイ見出し）</b>｜配色：暗紺×ブラスゴールド｜見出し：Space Grotesk+IBM Plex Sans JP<br>
+    セクション順：ヒーロー→理念一文→5事業一望→<b>訪問看護を主役で深掘り</b>→各事業整理→会社情報→お問い合わせ</div>
+  </div>
+
+  <div class="devices">
+   <!-- PC -->
+   <div class="pc">
+    <div class="devlabel">▮ PC（コンテナ1180px）</div>
+    <div class="frame">
+      <div class="barnav"><span class="logo">NEXT ロゴ</span><span class="nav">About｜Service｜訪問看護｜Company｜Contact</span></div>
+
+      <div class="sec" style="background:#1c2530">
+        <div class="elabel" style="color:#c9a24b">HERO / FULL VISUAL</div>
+        <div class="wire-box" style="height:230px;background:#283342;border-color:#3a4759;color:#9aa6b4">全面ビジュアル（CSSグラデ＋斜め光グリッド）<br>大見出し（白）＋英字タグライン＋スクロール誘導</div>
+        <div class="note"><b>意図：</b>現行の“かっこいい”を継承。冒頭で「医療と経営をつなぐ会社」という格を全面ビジュアルで提示し第一印象で信頼を作る。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">PHILOSOPHY</div>
+        <div class="h2">理念（一文）</div>
+        <div class="wire-box" style="height:64px">大きめ一文コピー「テキストが入ります。」</div>
+        <div class="note"><b>意図：</b>多事業で散漫に見えないよう、最初に会社の軸を一文で固定してから事業に展開する。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">SERVICE OVERVIEW</div>
+        <div class="h2">事業一望（事業マップ）</div>
+        <div class="cardrow">
+          <div class="wire-box miniwire">訪問看護</div><div class="wire-box miniwire">DX/研修</div><div class="wire-box miniwire">医療総合戦略</div><div class="wire-box miniwire">財務・経営</div><div class="wire-box miniwire">アート</div>
+        </div>
+        <div class="note"><b>意図：</b>「複数事業を展開する会社」という要件を満たすため、深掘り前に5事業を俯瞰させる。TOPは4事業程度に整理し5番目は控えめ表示も可。</div>
+      </div>
+
+      <div class="sec" style="background:#f5f7fa">
+        <div class="elabel">FLAGSHIP — VISITING NURSING</div>
+        <div class="h2">訪問看護ステーション「くくる」（精神科特化）</div>
+        <div class="lead">利用者様の生活に寄り添う在宅支援／複数拠点展開</div>
+        <div class="cardrow">
+          <div class="wire-box miniwire">くくる越谷<br>住所/TEL/FAX/コード</div>
+          <div class="wire-box miniwire">くくる足立</div>
+          <div class="wire-box miniwire">くくる流山</div>
+          <div class="wire-box miniwire">くくる浦和</div>
+        </div>
+        <div class="note"><b>意図：</b>今回の最重要追加事業。専用の明面セクションで主役化し、4拠点カード（PC4列）＋Googleマップリンクで実体・規模感を伝える。5拠点目「開設予定」も添える。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">OTHER SERVICES</div>
+        <div class="h2">各事業の整理</div>
+        <div class="row">
+          <div class="col wire-box" style="height:90px">DXシステム開発／研修</div>
+          <div class="col wire-box" style="height:90px">医療総合戦略</div>
+          <div class="col wire-box" style="height:90px">財務・経営支援（リファーラル中心）</div>
+        </div>
+        <div class="note"><b>意図：</b>事業内容を「課題→解決→領域」で簡潔提示。財務は“紹介中心”の見せ方で一般問い合わせを誘発しない。詳細は下層へ。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">COMPANY</div>
+        <div class="h2">会社情報</div>
+        <div class="wire-box" style="height:80px">合同会社NEXT／所在地／設立等（実体ある安心）</div>
+        <div class="note"><b>意図：</b>紹介先が「ちゃんとした会社か」を確認する導線。要件で“あった方が安心”と明言された必須セクション。</div>
+      </div>
+
+      <div class="sec" style="background:#1c2530">
+        <div class="elabel" style="color:#c9a24b">CONTACT</div>
+        <div class="h2" style="color:#fff">お問い合わせ</div>
+        <div class="wire-box" style="height:120px;background:#283342;border-color:#3a4759;color:#9aa6b4">共通フォーム（1つに集約）：会社名/お名前/メール/内容＋送信</div>
+        <div class="note"><b>意図：</b>事業別の個別問い合わせは作らず1フォームに集約。電話は出さずメール／フォール中心。CTAは締めの暗面で印象付け。</div>
+      </div>
+      <div class="foot">フッター：ロゴ／会社情報（住所・TEL小さく）／プライバシーポリシー／コピーライト</div>
+    </div>
+   </div>
+
+   <!-- SP -->
+   <div class="sp">
+    <div class="devlabel">▮ SP</div>
+    <div class="frame spframe">
+      <div class="barnav" style="padding:10px 12px"><span class="logo">NEXT</span><span>☰</span></div>
+      <div class="sec" style="background:#1c2530"><div class="wire-box" style="height:150px;background:#283342;border-color:#3a4759;color:#9aa6b4">全面ビジュアル<br>大見出し</div></div>
+      <div class="sec"><div class="elabel">PHILOSOPHY</div><div class="wire-box" style="height:50px">理念一文</div></div>
+      <div class="sec"><div class="elabel">SERVICE</div><div class="wire-box" style="height:44px;margin-bottom:6px">訪問看護</div><div class="wire-box" style="height:44px;margin-bottom:6px">DX/研修</div><div class="wire-box" style="height:44px">医療総合戦略 ほか</div></div>
+      <div class="sec" style="background:#f5f7fa"><div class="elabel">くくる</div><div class="wire-box" style="height:60px;margin-bottom:6px">越谷</div><div class="wire-box" style="height:60px">足立 …（1列）</div></div>
+      <div class="sec"><div class="elabel">COMPANY</div><div class="wire-box" style="height:60px">会社情報</div></div>
+      <div class="sec" style="background:#1c2530"><div class="wire-box" style="height:90px;background:#283342;border-color:#3a4759;color:#9aa6b4">フォーム</div></div>
+    </div>
+    <div class="note"><b>SP方針：</b>カードは1列。グローバルナビはハンバーガー。拠点は縦積み。</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============== B案 ============== -->
+<section class="panel" id="b">
+ <div class="wrap">
+  <div class="casehd">
+    <h2>B案：スライド型／モダン（ライト・エディトリアル）</h2>
+    <div class="meta">ヒーロー型＝<b>D（非対称グリッド／大小ブロック）</b>｜配色：白×ネイビー×コーラル｜見出し：Fraunces+Noto Serif JP<br>
+    セクション順：ヒーロー→About(姿勢+数値)→<b>事業インデックス01–05</b>→訪問看護くくる4拠点→専門性→会社情報→お問い合わせ</div>
+  </div>
+
+  <div class="devices">
+   <div class="pc">
+    <div class="devlabel">▮ PC（コンテナ1180px）</div>
+    <div class="frame">
+      <div class="barnav"><span class="logo">NEXT</span><span class="nav">About｜Service｜訪問看護｜Company｜Contact</span></div>
+
+      <div class="sec">
+        <div class="elabel">HERO / ASYMMETRIC GRID</div>
+        <div class="row">
+          <div class="col" style="flex:1.3">
+            <div class="wire-box" style="height:60px;margin-bottom:10px">大見出し（セリフ）</div>
+            <div class="wire-box" style="height:40px">リード文</div>
+          </div>
+          <div class="col">
+            <div class="cardrow" style="margin-top:0">
+              <div class="wire-box miniwire" style="height:60px">事業カード</div>
+              <div class="wire-box miniwire" style="height:60px">拠点数</div>
+              <div class="wire-box miniwire" style="height:60px">数値</div>
+              <div class="wire-box miniwire" style="height:60px">画像帯</div>
+            </div>
+          </div>
+        </div>
+        <div class="note"><b>意図：</b>A案の全面型と対極。左テキスト＋右に大小ブロックを非対称配置し“誌面をめくる”モダン感。第一印象でA案と全く違うことを示す。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">ABOUT</div>
+        <div class="h2">NEXTについて（姿勢＋数値）</div>
+        <div class="row">
+          <div class="col wire-box" style="height:70px">姿勢の短文</div>
+          <div class="col"><div class="cardrow" style="margin-top:0">
+            <div class="kpi"><div class="num">4</div><div class="cap">拠点</div></div>
+            <div class="kpi"><div class="num">5</div><div class="cap">事業</div></div>
+            <div class="kpi"><div class="num">精神科</div><div class="cap">特化</div></div>
+          </div></div>
+        </div>
+        <div class="note"><b>意図：</b>会社の実体・規模を数値で即提示。紹介先の「信頼できるか」に短文＋KPIで素早く答える。</div>
+      </div>
+
+      <div class="sec">
+        <div class="elabel">SERVICE INDEX 01–05</div>
+        <div class="h2">事業インデックス</div>
+        <div class="row" style="align-items:center"><span class="idxnum">01</span><div class="col wire-box" style="height:54px">訪問看護ステーション事業</div></div>
+        <div class="row" style="align-items:center"><span class="idxnum">02</span><div class="col wire-box" style="height:54px">DXシステム開発／研修</div></div>
+        <div class="row" style="align-items:center"><span class="idxnum">03</span><div class="col wire-box" style="height:54px">医療総合戦略</div></div>
+        <div class="row" style="align-items:center"><span class="idxnum">04</span><div class="col wire-box" style="height:54px">財務・経営支援</div></div>
+        <div class="row" style="align-items:center"><span class="idxnum">05</span><div class="col wire-box" style="height:54px">アートマネジメント</div></div>
+        <div class="note"><b>意図：</b>大きな連番で事業を“目次”化。多事業を整理して見せるという要件を、雑誌的インデックスで分かりやすく可視化。</div>
+      </div>
+
+      <div class="sec" style="background:#fbf2f0">
+        <div class="elabel" style="color:#d8584a">VISITING NURSING — KUKURU</div>
+        <div class="h2">訪問看護ステーション「くくる」4拠点</div>
+        <div class="cardrow">
+          <div class="wire-box miniwire" style="height:96px">越谷<br>住所/TEL/FAX/コード</div>
+          <div class="wire-box miniwire" style="height:96px">足立</div>
+          <div class="wire-box miniwire" style="height:96px">流山</div>
+          <div class="wire-box miniwire" style="height:96px">浦和</div>
+        </div>
+        <div class="note"><b>意図：</b>コーラルの淡い面で“人に寄り添う”温度を出しつつ情報整理。4列カード（SP1列）。</div>
+      </div>
+
+      <div class="sec"><div class="elabel">EXPERTISE</div><div class="h2">経営・DX・医療戦略の専門性</div>
+        <div class="row"><div class="col wire-box" style="height:80px">DX/AI</div><div class="col wire-box" style="height:80px">医療経営</div><div class="col wire-box" style="height:80px">財務(紹介制)</div></div>
+        <div class="note"><b>意図：</b>中小企業経営者層に向けた専門性の訴求。財務は紹介制と明記し広い問い合わせを誘発しない。</div>
+      </div>
+
+      <div class="sec"><div class="elabel">COMPANY</div><div class="h2">会社情報</div><div class="wire-box" style="height:70px">合同会社NEXT／所在地ほか</div></div>
+      <div class="sec"><div class="elabel">CONTACT</div><div class="h2">お問い合わせ</div><div class="wire-box" style="height:110px">共通フォーム（1つ）</div>
+        <div class="note"><b>意図：</b>電話非掲載・1フォーム集約は全案共通。コーラルのCTAボタンで明るく誘導。</div></div>
+      <div class="foot">フッター：ロゴ／会社情報／プライバシーポリシー</div>
+    </div>
+   </div>
+
+   <div class="sp">
+    <div class="devlabel">▮ SP</div>
+    <div class="frame spframe">
+      <div class="barnav" style="padding:10px 12px"><span class="logo">NEXT</span><span>☰</span></div>
+      <div class="sec"><div class="wire-box" style="height:60px;margin-bottom:6px">大見出し(セリフ)</div><div class="wire-box" style="height:50px">カード縦積み</div></div>
+      <div class="sec"><div class="elabel">ABOUT</div><div class="cardrow"><div class="kpi"><div class="num">4</div><div class="cap">拠点</div></div><div class="kpi"><div class="num">5</div><div class="cap">事業</div></div></div></div>
+      <div class="sec"><div class="elabel">INDEX</div><div class="wire-box" style="height:40px;margin-bottom:5px">01 訪問看護</div><div class="wire-box" style="height:40px;margin-bottom:5px">02 DX</div><div class="wire-box" style="height:40px">03–05 …</div></div>
+      <div class="sec" style="background:#fbf2f0"><div class="elabel" style="color:#d8584a">くくる</div><div class="wire-box" style="height:56px;margin-bottom:6px">越谷</div><div class="wire-box" style="height:56px">足立…（1列）</div></div>
+      <div class="sec"><div class="wire-box" style="height:80px">フォーム</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============== C案 ============== -->
+<section class="panel" id="c">
+ <div class="wrap">
+  <div class="casehd">
+    <h2>C案：動画型（グラデ・モーション）</h2>
+    <div class="meta">ヒーロー型＝<b>C（センター大見出し＋下に数値・カード）</b>｜配色：紺→淡青グラデ×ミント発光｜見出し：Sora+Murecho<br>
+    セクション順：動くヒーロー(数値カード)→ミッション→<b>5事業スクロール出現</b>→訪問看護4拠点(ピンのパルス)→先進性→会社情報→お問い合わせ</div>
+  </div>
+
+  <div class="devices">
+   <div class="pc">
+    <div class="devlabel">▮ PC（コンテナ1180px）</div>
+    <div class="frame">
+      <div class="barnav" style="background:#0a2540;color:#cfe3f5;border-color:#16385e"><span class="logo" style="color:#fff">NEXT</span><span class="nav" style="color:#9bc2e6">About｜Service｜訪問看護｜Company｜Contact</span></div>
+
+      <div class="sec" style="background:#0e2f54">
+        <div class="elabel" style="color:#7cf5e0">HERO / CENTERED + MOTION</div>
+        <div class="wire-box" style="height:120px;background:#123a63;border-color:#1f4d7d;color:#9bc2e6">背景：動くグラデ＋波形パルスライン<br>中央：大見出し（センター）＋英字</div>
+        <div class="cardrow">
+          <div class="kpi" style="background:#123a63"><div class="num" style="color:#7cf5e0">4</div><div class="cap" style="color:#9bc2e6">拠点</div></div>
+          <div class="kpi" style="background:#123a63"><div class="num" style="color:#7cf5e0">5</div><div class="cap" style="color:#9bc2e6">事業</div></div>
+          <div class="kpi" style="background:#123a63"><div class="num" style="color:#7cf5e0">精神科</div><div class="cap" style="color:#9bc2e6">特化</div></div>
+        </div>
+        <div class="note"><b>意図：</b>動画型の主役は“動き”。中央見出し＋直下に数値カードがフェードインし、先進性と「見やすさ・信頼」を両立。A=全面/B=非対称と型を変える。</div>
+      </div>
+
+      <div class="sec"><div class="elabel">MISSION</div><div class="h2">ミッション（流れるテキスト）</div><div class="wire-box" style="height:60px">スクロールで現れる一文</div>
+        <div class="note"><b>意図：</b>動きを使い理念を印象的に提示。情報量は絞り“先進的な医療×DX企業”の世界観を作る。</div></div>
+
+      <div class="sec"><div class="elabel">SERVICE (SCROLL REVEAL)</div><div class="h2">5事業をスクロール連動で順次表示</div>
+        <div class="cardrow">
+          <div class="wire-box miniwire" style="height:80px">①訪問看護</div><div class="wire-box miniwire" style="height:80px">②DX/研修</div><div class="wire-box miniwire" style="height:80px">③医療戦略</div><div class="wire-box miniwire" style="height:80px">④財務</div><div class="wire-box miniwire" style="height:80px">⑤アート</div>
+        </div>
+        <div class="note"><b>意図：</b>「事業内容が順番に表示される演出」（要件B案記述）を採用。カードが下から浮上し読み手の理解を順序立てる。</div></div>
+
+      <div class="sec" style="background:#eaf2fb"><div class="elabel" style="color:#1e5bb8">KUKURU — 4 STATIONS</div><div class="h2">訪問看護「くくる」4拠点</div>
+        <div class="cardrow">
+          <div class="wire-box miniwire" style="height:96px">越谷（地図ピン）</div><div class="wire-box miniwire" style="height:96px">足立</div><div class="wire-box miniwire" style="height:96px">流山</div><div class="wire-box miniwire" style="height:96px">浦和</div>
+        </div>
+        <div class="note"><b>意図：</b>拠点を地図ピンのパルス演出で“広がり”を動的に可視化。情報（住所/TEL/FAX/コード）はカードで整理し信頼性を担保。</div></div>
+
+      <div class="sec" style="background:#0e2f54"><div class="elabel" style="color:#7cf5e0">ADVANCED</div><div class="h2" style="color:#fff">医療×DX×経営の先進性</div><div class="wire-box" style="height:80px;background:#123a63;border-color:#1f4d7d;color:#9bc2e6">ラインアニメ／データ可視化風ビジュアル</div></div>
+
+      <div class="sec"><div class="elabel">COMPANY</div><div class="h2">会社情報</div><div class="wire-box" style="height:70px">合同会社NEXT／所在地ほか</div></div>
+      <div class="sec" style="background:#0e2f54"><div class="elabel" style="color:#7cf5e0">CONTACT</div><div class="h2" style="color:#fff">お問い合わせ</div><div class="wire-box" style="height:110px;background:#123a63;border-color:#1f4d7d;color:#9bc2e6">共通フォーム（1つ）</div></div>
+      <div class="foot">フッター：ロゴ／会社情報／プライバシーポリシー</div>
+    </div>
+   </div>
+
+   <div class="sp">
+    <div class="devlabel">▮ SP</div>
+    <div class="frame spframe">
+      <div class="barnav" style="padding:10px 12px;background:#0a2540;color:#fff"><span class="logo" style="color:#fff">NEXT</span><span>☰</span></div>
+      <div class="sec" style="background:#0e2f54"><div class="wire-box" style="height:90px;background:#123a63;border-color:#1f4d7d;color:#9bc2e6">動くヒーロー<br>中央見出し</div><div class="cardrow"><div class="kpi" style="background:#123a63"><div class="num" style="color:#7cf5e0">4</div><div class="cap" style="color:#9bc2e6">拠点</div></div><div class="kpi" style="background:#123a63"><div class="num" style="color:#7cf5e0">5</div><div class="cap" style="color:#9bc2e6">事業</div></div></div></div>
+      <div class="sec"><div class="elabel">SERVICE</div><div class="wire-box" style="height:44px;margin-bottom:6px">①訪問看護</div><div class="wire-box" style="height:44px">②–⑤（順次出現）</div></div>
+      <div class="sec" style="background:#eaf2fb"><div class="elabel" style="color:#1e5bb8">くくる</div><div class="wire-box" style="height:56px;margin-bottom:6px">越谷</div><div class="wire-box" style="height:56px">足立…（1列）</div></div>
+      <div class="sec" style="background:#0e2f54"><div class="wire-box" style="height:80px;background:#123a63;border-color:#1f4d7d;color:#9bc2e6">フォーム</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============== 下層 ============== -->
+<section class="panel" id="sub">
+ <div class="wrap">
+  <div class="casehd"><h2>下層ページ（A/B/C共通の構造）</h2>
+    <div class="meta">小規模・最小限。パンくず＋リード＋本文。トンマナは採用案の配色/フォントを継承</div></div>
+
+  <div class="row" style="flex-wrap:wrap;gap:24px;margin-top:24px">
+    <div class="col" style="min-width:300px">
+      <div class="frame">
+        <div class="sec"><div class="elabel">COMPANY / 会社情報</div>
+          <div class="wire-box" style="height:18px;margin-bottom:8px;justify-content:flex-start;padding-left:10px">Home ＞ 会社情報</div>
+          <div class="wire-box" style="height:40px;margin-bottom:8px">リード文</div>
+          <div class="wire-box" style="height:120px">会社概要テーブル：会社名（合同会社NEXT）/所在地/TEL/FAX/設立等</div>
+          <div class="wire-box" style="height:90px;margin-top:8px">訪問看護くくる4拠点（住所/TEL/FAX/医療機関コード／マップリンク）</div>
+          <div class="note"><b>意図：</b>“実体ある安心”の核ページ。事業所一覧をここに集約。電話は表内に控えめ掲載。</div>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="min-width:300px">
+      <div class="frame">
+        <div class="sec"><div class="elabel">SERVICE / 事業内容</div>
+          <div class="wire-box" style="height:18px;margin-bottom:8px;justify-content:flex-start;padding-left:10px">Home ＞ 事業内容</div>
+          <div class="wire-box" style="height:60px;margin-bottom:8px">訪問看護（精神科特化）詳細</div>
+          <div class="wire-box" style="height:46px;margin-bottom:6px">DX/研修</div>
+          <div class="wire-box" style="height:46px;margin-bottom:6px">医療総合戦略</div>
+          <div class="wire-box" style="height:46px;margin-bottom:6px">財務・経営支援（紹介制）</div>
+          <div class="wire-box" style="height:46px">アートマネジメント</div>
+          <div class="note"><b>意図：</b>TOPで4事業に整理した分の“補足”を担う。各事業 課題→解決→領域 で簡潔に。</div>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="min-width:300px">
+      <div class="frame">
+        <div class="sec"><div class="elabel">CONTACT / お問い合わせ</div>
+          <div class="wire-box" style="height:18px;margin-bottom:8px;justify-content:flex-start;padding-left:10px">Home ＞ お問い合わせ</div>
+          <div class="wire-box" style="height:34px;margin-bottom:6px">会社名 / お名前（必須）</div>
+          <div class="wire-box" style="height:34px;margin-bottom:6px">メールアドレス（必須）</div>
+          <div class="wire-box" style="height:70px;margin-bottom:6px">お問い合わせ内容</div>
+          <div class="wire-box" style="height:34px">送信ボタン</div>
+          <div class="note"><b>意図：</b>共通フォーム1つに集約。電話番号は前面に出さず会社情報欄へ誘導。代表メール併記。</div>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="min-width:300px">
+      <div class="frame">
+        <div class="sec"><div class="elabel">PRIVACY / プライバシーポリシー</div>
+          <div class="wire-box" style="height:18px;margin-bottom:8px;justify-content:flex-start;padding-left:10px">Home ＞ プライバシーポリシー</div>
+          <div class="wire-box" style="height:160px">本文（個人情報の取扱い等）テキストが入ります。</div>
+          <div class="note"><b>意図：</b>会社の信頼性確保のため必須。シンプルな単一テキストページ。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:24px"><b>作らないページ：</b>代表挨拶・代表写真・ブログ・お知らせ・各事業の個別問い合わせ（要件で不要と明記）。</div>
+ </div>
+</section>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+    document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>

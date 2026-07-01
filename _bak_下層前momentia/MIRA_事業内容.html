@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業内容 ｜ 株式会社MIRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D1B2A;--ink2:#0a1521;--mid:#1B3A5B;--mid2:#274d75;--brass:#C9A24B;--brass-l:#e0c179;--platinum:#C8D2DC;--off:#F5F7FA;--line:rgba(200,210,220,.16);--muted:#8d9aa8;--serif:"Space Grotesk";--sans:"IBM Plex Sans JP"}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--platinum);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}a{color:inherit;text-decoration:none}
+.en{font-family:var(--serif);letter-spacing:.16em}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,21,33,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.22em;color:#fff}
+.logo small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.3em;color:var(--brass);font-weight:500}
+nav.gnav{display:flex;gap:28px;font-size:13px}nav.gnav a{color:var(--platinum);transition:.3s}nav.gnav a:hover{color:var(--brass)}
+.menubtn{display:none;font-size:24px;color:#fff;background:none;border:none;cursor:pointer}
+.phero{padding:160px 0 70px;position:relative;overflow:hidden;background:linear-gradient(150deg,#0a1521,#16314c)}
+.phero .grid{position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(200,210,220,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,210,220,.05) 1px,transparent 1px);background-size:60px 60px;transform:skewY(-6deg)}
+.phero .beam{position:absolute;width:160%;height:2px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.45;top:60%;left:-30%;transform:rotate(-6deg)}
+.phero-in{position:relative;z-index:2}
+.phero .en{color:var(--brass);font-size:13px;letter-spacing:.24em}
+.phero h1{color:#fff;font-size:clamp(28px,4vw,46px);font-weight:700;margin-top:14px}
+.crumb{font-size:12px;color:var(--muted);margin-top:18px}.crumb a:hover{color:var(--brass)}
+/* anchor nav */
+.anav{position:sticky;top:74px;z-index:40;background:rgba(12,26,42,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.anav .wrap{display:flex;gap:8px;overflow-x:auto;padding:14px 32px}
+.anav a{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:8px 16px;border-radius:30px;white-space:nowrap;transition:.3s}
+.anav a:hover{color:var(--brass);border-color:var(--brass)}
+/* service block */
+.sblock{padding:96px 0;border-bottom:1px solid var(--line)}
+.sblock:nth-child(even){background:#0c1a2a}
+.sgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.sblock:nth-child(even) .svis{order:2}
+.svis{height:340px;border-radius:20px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.svis .glyph span{position:absolute;border:1px solid rgba(201,162,75,.3);border-radius:50%}
+.svis .big{position:absolute;left:34px;top:28px;font-family:var(--serif);font-size:80px;font-weight:700;color:rgba(255,255,255,.08)}
+.svis .tag{position:absolute;left:34px;bottom:30px;font-family:var(--serif);color:var(--brass);letter-spacing:.16em}
+.v1{background:linear-gradient(150deg,rgba(13,27,42,.5),rgba(13,27,42,.78)),url('images/img_value-01.png') center/cover}
+.v2{background:linear-gradient(150deg,rgba(13,27,42,.55),rgba(13,27,42,.82)),url('images/img_service-pic-02.png') center/cover}
+.v3{background:linear-gradient(150deg,rgba(13,27,42,.5),rgba(13,27,42,.78)),url('images/img_service-pic-01.png') center/cover}
+.v4{background:linear-gradient(150deg,rgba(13,27,42,.5),rgba(13,27,42,.8)),url('images/img_service-pic-03.png') center/cover}
+.v5{background:linear-gradient(150deg,rgba(13,27,42,.45),rgba(13,27,42,.72)),url('images/img_service-pic-04.png') center/cover}
+.scontent .eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--brass);margin-bottom:14px}
+.scontent h2{color:#fff;font-size:clamp(24px,3vw,32px);font-weight:700}
+.scontent p{color:var(--muted);margin-top:16px;font-size:15px}
+.points{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pt{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--platinum)}
+.pt::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass);margin-top:9px;flex:none}
+.tag-badge{display:inline-block;background:rgba(201,162,75,.12);color:var(--brass);font-size:12px;padding:5px 16px;border-radius:30px;margin-top:18px}
+.cta{padding:110px 0;text-align:center;background:radial-gradient(120% 100% at 50% 0%,#16314c,#0a1521)}
+.cta h2{color:#fff;font-size:clamp(24px,3vw,36px);font-weight:700}.cta p{color:var(--muted);margin:18px auto 34px;max-width:480px}
+.btn{display:inline-block;background:var(--brass);color:#0D1B2A;font-weight:700;padding:16px 40px;border-radius:40px;transition:.4s}.btn:hover{background:var(--brass-l);transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,162,75,.3)}
+footer{background:#080f18;padding:60px 0 34px;border-top:1px solid var(--line)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.fgrid .logo{font-size:20px}.fgrid p{font-size:12px;color:var(--muted);margin-top:14px}
+.fcol h5{font-size:11px;letter-spacing:.18em;color:var(--brass);margin-bottom:14px}
+.fcol a{display:block;font-size:13px;padding:6px 0;color:var(--platinum);transition:.3s}.fcol a:hover{color:var(--brass)}
+.copy{border-top:1px solid var(--line);padding-top:24px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){nav.gnav{display:none}.menubtn{display:block}.sgrid,.fgrid{grid-template-columns:1fr}.sblock:nth-child(even) .svis{order:0}.points{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a href="./MIRA_デザイン案A.html" class="logo">MIRA<small>MEDICAL × MANAGEMENT</small></a>
+    <nav class="gnav">
+      <a href="./MIRA_デザイン案A.html">Home</a><a href="./MIRA_事業内容.html" style="color:var(--brass)">事業内容</a>
+      <a href="./MIRA_会社情報.html">会社情報</a><a href="./MIRA_お問い合わせ.html">お問い合わせ</a>
+    </nav>
+    <button class="menubtn" id="mbtn">☰</button>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="grid"></div><div class="beam"></div>
+  <div class="wrap phero-in">
+    <div class="en">OUR BUSINESS</div>
+    <h1>事業内容</h1>
+    <div class="crumb"><a href="./MIRA_デザイン案A.html">Home</a> ／ 事業内容</div>
+  </div>
+</section>
+
+<nav class="anav"><div class="wrap">
+  <a href="#s1">01 訪問看護</a><a href="#s2">02 DX・研修</a><a href="#s3">03 医療総合戦略</a><a href="#s4">04 財務・経営支援</a><a href="#s5">05 アート</a>
+</div></nav>
+
+<section class="sblock" id="s1"><div class="wrap sgrid">
+  <div class="svis v1"><div class="big">01</div><div class="glyph"><span style="width:160px;height:160px;left:40%;top:30%"></span><span style="width:90px;height:90px;left:60%;top:50%"></span></div><div class="tag">VISITING NURSING</div></div>
+  <div class="scontent"><div class="eyebrow">SERVICE 01</div><h2>訪問看護ステーション事業</h2>
+    <p>精神科領域に特化した訪問看護「くくる」を運営。心の回復に寄り添い、その人らしい暮らしを在宅で支えます。医療・福祉・地域との連携で、継続的なサポート体制を整えています。</p>
+    <div class="points"><div class="pt">精神科領域に特化</div><div class="pt">生活に寄り添う在宅支援</div><div class="pt">医療・福祉・地域との連携</div><div class="pt">継続的なサポート体制</div></div>
+    <span class="tag-badge">関東4拠点（越谷・足立・流山・浦和）／5拠点目 開設予定</span></div>
+</div></section>
+
+<section class="sblock" id="s2"><div class="wrap sgrid">
+  <div class="svis v2"><div class="big">02</div><div class="glyph"><span style="width:130px;height:130px;left:30%;top:24%"></span><span style="width:200px;height:200px;left:46%;top:36%"></span></div><div class="tag">DX / AI</div></div>
+  <div class="scontent"><div class="eyebrow">SERVICE 02</div><h2>DXシステム開発／研修事業</h2>
+    <p>企業のDX推進・AI活用・業務効率化を、システム開発と現場研修の両面から支援します。導入して終わりにせず、現場に定着するまで伴走します。</p>
+    <div class="points"><div class="pt">業務効率化</div><div class="pt">AI活用支援</div><div class="pt">DX推進・システム開発</div><div class="pt">現場への定着支援</div><div class="pt">レピュテーションマネジメント</div></div></div>
+</div></section>
+
+<section class="sblock" id="s3"><div class="wrap sgrid">
+  <div class="svis v3"><div class="big">03</div><div class="glyph"><span style="width:150px;height:150px;left:34%;top:28%"></span><span style="width:80px;height:80px;left:58%;top:52%"></span></div><div class="tag">MEDICAL STRATEGY</div></div>
+  <div class="scontent"><div class="eyebrow">SERVICE 03</div><h2>医療総合戦略事業</h2>
+    <p>クリニック・医療機関に最適化した経営戦略を設計。開業支援から集患マーケティング、ブランディングまで、実務に基づいて支援します。</p>
+    <div class="points"><div class="pt">医療機関の経営支援</div><div class="pt">開業支援</div><div class="pt">集患・マーケティング支援</div><div class="pt">ブランディング支援</div></div></div>
+</div></section>
+
+<section class="sblock" id="s4"><div class="wrap sgrid">
+  <div class="svis v4"><div class="big">04</div><div class="glyph"><span style="width:120px;height:120px;left:26%;top:32%"></span><span style="width:170px;height:170px;left:50%;top:26%"></span></div><div class="tag">FINANCE</div></div>
+  <div class="scontent"><div class="eyebrow">SERVICE 04</div><h2>財務コンサルティング／経営支援</h2>
+    <p>経営判断と財務面の支援を、紹介・リファーラル中心で深く行います。一般向けに広く受けるのではなく、信頼関係のある場で、事業戦略の設計まで踏み込みます。</p>
+    <div class="points"><div class="pt">経営判断のサポート</div><div class="pt">財務面からの事業支援</div><div class="pt">事業戦略の設計</div><div class="pt">紹介制・リファーラル中心</div></div></div>
+</div></section>
+
+<section class="sblock" id="s5"><div class="wrap sgrid">
+  <div class="svis v5"><div class="big">05</div><div class="glyph"><span style="width:140px;height:140px;left:36%;top:30%"></span><span style="width:90px;height:90px;left:58%;top:50%"></span></div><div class="tag">ART MANAGEMENT</div></div>
+  <div class="scontent"><div class="eyebrow">SERVICE 05</div><h2>アートマネジメント事業</h2>
+    <p>アーティスト支援を軸に、作品価値の最大化を手がけます。企画・販売・レンタルから、企業とのコラボレーションまで、文化と事業をつなぎます。</p>
+    <div class="points"><div class="pt">アーティスト支援</div><div class="pt">作品価値の最大化</div><div class="pt">企画・販売・レンタル</div><div class="pt">企業コラボレーション</div></div></div>
+</div></section>
+
+<section class="cta">
+  <div class="wrap"><h2>事業のご相談・ご連携について</h2>
+    <p>ご相談は共通お問い合わせフォームよりお気軽にお寄せください。</p>
+    <a href="./MIRA_お問い合わせ.html" class="btn">お問い合わせフォーム →</a></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><div class="logo">MIRA<small style="color:var(--brass);letter-spacing:.3em;font-size:9px">MEDICAL × MANAGEMENT</small></div><p>運営：合同会社NEXT</p></div>
+      <div class="fcol"><h5>PAGES</h5><a href="./MIRA_デザイン案A.html">Home</a><a href="./MIRA_事業内容.html">事業内容</a><a href="./MIRA_会社情報.html">会社情報</a></div>
+      <div class="fcol"><h5>CONTACT</h5><a href="./MIRA_お問い合わせ.html">お問い合わせ</a><a href="./MIRA_プライバシーポリシー.html">プライバシーポリシー</a></div>
+    </div>
+    <div class="copy"><span>© MIRA / 合同会社NEXT. All Rights Reserved.</span><span class="en">Medical × Management</span></div>
+  </div>
+</footer>
+<script>
+document.getElementById('mbtn').addEventListener('click',function(){
+  var g=document.querySelector('.gnav');
+  g.style.cssText='display:flex;flex-direction:column;position:absolute;top:74px;right:24px;background:#0a1521;border:1px solid rgba(200,210,220,.16);padding:18px 26px;border-radius:12px;gap:14px';
+});
+</script>
+</body>
+</html>
